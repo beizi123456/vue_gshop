@@ -101,8 +101,9 @@
                   />
                   <img
                     class="get_verification"
-                    src="./images/captcha.svg"
+                    src="http://localhost:4000/captcha"
                     alt="captcha"
+                    @click="getCaptcha"
                   />
                 </section>
               </section>
@@ -191,9 +192,13 @@ export default {
         }
       }
     },
+    //关闭弹框
     closeTip() {
       this.alertShow = false;
       this.alertText = "";
+    },
+    getCaptcha(event) {
+      event.target.src = "http://localhost:4000/captcha?time=" + Date.now();
     },
   },
   components: {
