@@ -5,7 +5,9 @@
         class="shop_li border-1px"
         v-for="(shop, index) in shops"
         :key="index"
+        @click="$router.push('/shop')"
       >
+        {{ $router.data }}
         <a>
           <div class="shop_left">
             <img class="shop_img" :src="imgBaseUrl + shop.image_path" />
